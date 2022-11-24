@@ -1,25 +1,15 @@
 public class CreditPaymentService {
-    // k сумма кредита
-    // p процентная ставка
-    // m кол-во месяцев
-    public double calculate(double k, double p, double m) {
+    // kredit сумма кредита
+    // percent процентная ставка
+    // manth кол-во месяцев
+    public double calculate(double kredit, double percent, double manth) {
         //месячная процентная ставка
-        double s;
-        s = p / 12 / 100;
+        double mPercent = percent / 12 / 100;
         //коэффициэнт аннуитета
-        double a;
-        a = 1 + s;
-        double x = Math.pow(a,m); // (1 + процент в кол-ве мес.)
-        double t;
-        t = x * s;//1
-        double y;
-        y = x - 1;//2
-        double u;
-        u = t / y;
+        double coef = mPercent * Math.pow((1 + mPercent), manth) / (Math.pow((1 + mPercent), manth) - 1);
         //Аннуитетный взнос
-        double fif;
-        fif = u * k;
-        int otv = (int) fif;
+        double vznos = coef * kredit;
+        int otv = (int) vznos;
 
         return otv;
 

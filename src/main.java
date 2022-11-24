@@ -1,9 +1,9 @@
 public class main {
     public static void main(String[] args) {
         CreditPaymentService service = new CreditPaymentService();
-        // k сумма кредита
-        // p процентная ставка
-        // m кол-во месяцев
+        // kredit сумма кредита
+        // percent процентная ставка
+        // manth кол-во месяцев
 
         System.out.println();
         System.out.println("Срок кредита 12мес.");
