@@ -3,12 +3,12 @@ public class CreditPaymentService {
     // percent процентная ставка
     // manth кол-во месяцев
     public double calculate(double kredit, double percent, double manth) {
-        //месячная процентная ставка
-        double mPercent = percent / 12 / 100;
-        //коэффициэнт аннуитета
-        double coef = mPercent * Math.pow((1 + mPercent), manth) / (Math.pow((1 + mPercent), manth) - 1);
+        //Месячная процентная ставка
+        double manthPercent = percent / 12 / 100;
+        //Коэффициэнт аннуитета
+        double coefficent = manthPercent * Math.pow((1 + manthPercent), manth) / (Math.pow((1 + manthPercent), manth) - 1);
         //Аннуитетный взнос
-        double vznos = coef * kredit;
+        double vznos = coefficent * kredit;
         int otv = (int) vznos;
 
         return otv;
